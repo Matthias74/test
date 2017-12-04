@@ -1,0 +1,17 @@
+<h1 class="text-center">Dossier <%= @folder.name %></h1>
+<%= link_to "ajouter un fichier à ce dossier", new_folder_document_path(@folder), class: "btn btn-primary" %>
+
+<div class="container">
+  <div class="row">
+    <% if @folder.documents.count > 1 %>
+      <% @folder.documents.each do |d| %>
+        <div class="col-xs-12 col-md-2">
+          <%= d.name %>
+          <%= cl_image_tag d.photo, height: 120, width: 160, crop: :fill %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Ce fichier n'a aucun document</p>
+    <% end %>
+  </div>
+</div>

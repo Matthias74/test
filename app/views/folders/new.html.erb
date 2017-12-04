@@ -1,0 +1,7 @@
+<div class="container">
+  <h1 class="text-center">Nouveau dossier</h1>
+    <%= simple_form_for(@folder) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "crée ton dossier", class: "btn btn-primary" %>
+  <% end %>
+</div>
